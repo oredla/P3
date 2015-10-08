@@ -11,6 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+# Explicit routes for Lorem Ipsum
+Route::get('/', 'P3Controller@getIndex');
+Route::get('/lorem-ipsum', 'P3Controller@getLoremGenerator');
+Route::get('/user-generator', 'P3Controller@getUserGenerator');
+Route::get('/octal-decoder', 'P3Controller@getOctalDecoder');
+Route::post('/color-picker', 'P3Controller@getColorPicker');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//
+// Route::get('/lorem-ipsum', function() {
+//   return 'Lorem Ipsum Page';
+// });
+//
+// Route::get('/user-generator', function() {
+//   return 'Random User Generator with P1 Random Password Generator';
+// });
+//
+// Route::get('/decode-octal', function() {
+//   return 'Decode Octal Notation';
+// });
