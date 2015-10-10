@@ -17,7 +17,7 @@ Route::get('/', 'P3Controller@getIndex');
 Route::get('/lorem-ipsum', 'P3Controller@getLoremGenerator');
 Route::get('/user-generator', 'P3Controller@getUserGenerator');
 Route::get('/octal-decoder', 'P3Controller@getOctalDecoder');
-Route::post('/color-picker', 'P3Controller@getColorPicker');
+Route::get('/color-picker', 'P3Controller@getColorPicker');
 
 // Route::get('/', function () {
 //     return view('welcome');

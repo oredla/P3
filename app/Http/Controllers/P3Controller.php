@@ -41,7 +41,7 @@ class P3Controller extends Controller {
     /**
      * Responds to requests to POST /color-picker's tool page
      */
-    public function getColorPicker() {
-        return 'Color Picker page';
-    }
+     public function getColorPicker() {
+         return view('colorpicker.color');
+     }
 }

@@ -6,7 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
+        "laravel/framework": "5.1.*",
+        "barryvdh/laravel-debugbar": "^2.0",
+        "badcow/lorem-ipsum": "^1.1",
+        "fzaninotto/Faker": "^1.5",
+        "hasbridge/php-color": "dev-master",
+        "ideil/binary-to-text-php": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

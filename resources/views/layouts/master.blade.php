@@ -2,24 +2,22 @@
 <html>
 <head>
     <title>
-        {{-- Yield the title if it exists, otherwise default to 'Foobooks' --}}
-        @yield('title','Foobooks')
+        {{-- Yield the title if it exists, otherwise default to 'Developer\'s Best Friend' --}}
+        @yield('title','Developer\'s Best Friend')
     </title>
-
     <meta charset='utf-8'>
-    <link href="/css/foobooks.css" type='text/css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,100' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" type='text/css' rel='stylesheet'>
 
-    {{-- Yield any page specific CSS files or anything else you might want in the <head> --}}
+    {{-- Yield any page specific CSS files or anything else you might want in the html head --}}
     @yield('head')
 
 </head>
 <body>
 
     <header>
-        <img
-        src='http://making-the-internet.s3.amazonaws.com/laravel-foobooks-logo@2x.png'
-        style='width:300px'
-        alt='Foobooks Logo'>
+      @include('layouts.header')
+
     </header>
 
     <section>
