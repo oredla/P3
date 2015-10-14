@@ -4,7 +4,6 @@
 Color Picker
 @stop
 
-
 {{--
 This `head` section will be yielded right before the closing </head> tag.
 Use it to add specific things that *this* View needs in the head,
@@ -33,6 +32,10 @@ such as a page specific styesheets.
     <form>
       <input type="color" value="<?=$color?>">
     </form>
+    <form name="registrationForm">
+      <input type="range" name="ageInputName" id="ageInputId" value="24" min="1" max="100" oninput="ageOutputId.value = ageInputId.value">
+      <output name="ageOutputName" id="ageOutputId">24</output>
+    </form>
 @stop
 
 
@@ -42,5 +45,5 @@ Use it to add specific things that *this* View needs at the end of the body,
 such as a page specific JavaScript files.
 --}}
 @section('body')
-    {{-- <script src="/js/books/show.js"></script> --}}
+
 @stop

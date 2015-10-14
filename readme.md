@@ -1,3 +1,37 @@
+# CSCI E-15, P3, Kar Ho Lau
+
+## Live URL
+<http://p3.orangeedward.xyz>
+
+## Description
+The third assignment, P3, devloped with Laravel to provide a set of web developer's tools.
+
+## Demo
+
+
+## Details for teaching team
+No login required.
+
+The page is structured by Bootstrap for styling.
+
+Breadcrumb is fixed to the bottom of the page with navbar-fixed-bottom.
+
+All input are validated by HTML's FORM Attributes, it set input to be number and set MIN and MAX accordingly.
+
+## Outside code
+* Bootstrap: http://getbootstrap.com/
+
+## Color Picker
+idea inspired by: [http://www.javascripter.net/faq/rgbtohex.htm](http://www.javascripter.net/faq/rgbtohex.htm)
+
+## Laravel packages
+* Lorem Ipsum Generator: uses [badcow/lorem-ipsum](https://packagist.org/packages/badcow/lorem-ipsum)
+* User Generator: uses [fzaninotto/faker](https://packagist.org/packages/fzaninotto/faker)
+* Color Picker: uses [hasbridge/php-color](https://packagist.org/packages/hasbridge/php-color)
+* Octal Decoder: uses [ideil/binary-to-text-php](https://packagist.org/packages/ideil/binary-to-text-php)
+
+
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

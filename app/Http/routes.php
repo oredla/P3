@@ -12,25 +12,17 @@
 */
 
 
-# Explicit routes for Lorem Ipsum
+# Explicit routes for all GET functions
 Route::get('/', 'P3Controller@getIndex');
 Route::get('/lorem-ipsum', 'P3Controller@getLoremGenerator');
 Route::get('/user-generator', 'P3Controller@getUserGenerator');
 Route::get('/octal-decoder', 'P3Controller@getOctalDecoder');
 Route::get('/color-picker', 'P3Controller@getColorPicker');
+Route::get('/xkcd-generator', 'P3Controller@getXkcdGenerator');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-//
-// Route::get('/lorem-ipsum', function() {
-//   return 'Lorem Ipsum Page';
-// });
-//
-// Route::get('/user-generator', function() {
-//   return 'Random User Generator with P1 Random Password Generator';
-// });
-//
-// Route::get('/decode-octal', function() {
-//   return 'Decode Octal Notation';
-// });
+# Explicit routes for all POST functions
+Route::post('/lorem-ipsum', 'P3Controller@postLoremGenerator');
+Route::post('/user-generator', 'P3Controller@postUserGenerator');
+Route::post('/octal-decoder', 'P3Controller@postOctalDecoder');
+Route::post('/color-picker', 'P3Controller@postColorPicker');
+Route::post('/xkcd-generator', 'P3Controller@postXkcdGenerator');

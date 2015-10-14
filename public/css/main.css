@@ -10,9 +10,64 @@ h1 {
 h3 {
   font-size: 2em;
   letter-spacing: 25px;
-  color: #888;
+  color: #666;
   font-weight: 900;
-  border-top-style: dashed;
-  border-top-width: medium;
-  border-top-color: #f90;
+  padding-bottom: 0.5em;
+}
+hr{
+  width: 50%;
+  text-align: center;
+  background-color: #f90;
+  height:5px !important;
+  /*!important is used for overriding the default bootstrap setting*/
+  border-width:0;
+}
+.formHR{
+  width: 50%;
+  text-align: center;
+  background-color: #f99;
+  height:2px !important;
+  /*!important is used for overriding the default bootstrap setting*/
+  border-width:0;
+}
+.outputSeparator{
+  width: 50%;
+  text-align: center;
+  background-color: #bbb;
+  height:2px !important;
+  /*!important is used for overriding the default bootstrap setting*/
+  border-width:0;
+}
+.formUL li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 1em;
+}
+li{
+    list-style: none;
+    padding: 0 1em;
+}
+.navbar .navbar-nav {
+    vertical-align: top;
+    width: 100%;
+    text-align: center;
+  }
+ .navbar .navbar-nav li {
+      /*overriding the style for the navbar and CENTER it*/
+      float: none ;
+      display: inline-block;
+    }
+
+.form{
+  text-align: center;
+}
+.output{
+  margin-top: 2em;
+  padding: 1em;
+  margin-bottom: 4em;
+  background-color: #ffe;
+}
+.breadcrumb{
+  padding: 16px 25px !important;
+  /*!important is used for overriding the default bootstrap padding size*/
 }

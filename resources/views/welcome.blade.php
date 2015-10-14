@@ -1,45 +1,66 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.master')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+{{--
+empty 'title' section so it will NOT display the menu bar on the front page 
+--}}
+@section('title')
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@stop
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+{{--
+empty 'breadcrumb' section so it will NOT display the menu bar on the front page
+--}}
+@section('breadcrumb')
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+@stop
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+{{--
+empty 'menu' section so it will NOT display the menu bar on the front page
+--}}
+@section('menu')
 
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+@stop
+
+{{--
+This `head` section will be yielded right before the closing </head> tag.
+Use it to add specific things that *this* View needs in the head,
+such as a page specific styesheets.
+--}}
+@section('head')
+
+@stop
+
+
+@section('content')
+    <div class="jumbotron">
+      <h1>Lorem Ipsum Generator</h1>
+      <p></p>
+      <p><a class="btn btn-primary btn-lg" href="/lorem-ipsum" role="button">Lorem Ipsum Generator</a></p>
+    </div>
+    <div class="jumbotron">
+      <h1>Random User Generator</h1>
+      <p>A generator that will help you to create dummy users with dummy information to populate a database for testing.</p>
+      <p><a class="btn btn-primary btn-lg" href="/user-generator" role="button">Random User Generator</a></p>
+    </div>
+    <div class="jumbotron">
+      <h1>Color Picker</h1>
+      <p></p>
+      <p><a class="btn btn-primary btn-lg" href="/color-picker" role="button">Color Picker</a></p>
+    </div>
+    <div class="jumbotron">
+      <h1>Octal Decoder</h1>
+      <p> </p>
+      <p><a class="btn btn-primary btn-lg" href="/octal-decoder" role="button">Octal Decoder</a></p>
+    </div>
+
+@stop
+
+
+{{--
+This `body` section will be yielded right before the closing </body> tag.
+Use it to add specific things that *this* View needs at the end of the body,
+such as a page specific JavaScript files.
+--}}
+@section('body')
+
+@stop

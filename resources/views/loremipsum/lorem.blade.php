@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
-
 @section('title')
-    Create book
+Lorem Ipsum Generator
 @stop
 
 
@@ -12,15 +11,30 @@ Use it to add specific things that *this* View needs in the head,
 such as a page specific styesheets.
 --}}
 @section('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+
 @stop
 
 
 @section('content')
-    <form method="POST" action="/books/create">
-    <input type="text" name="title">
-    <input type="submit">
-    </form>
+  <div class='form'>
+    <form method="POST" class="form-inline">
+        How many paragraphs do you want? (Max: 99)
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="number" class="form-control" name="loreminput" min="1" max="99" value="5">
+        <button type="submit" class="btn btn-primary">Generate</button>
+      </form>
+    </div>
+    <hr class="formHR">
+      @if(isset($_POST['loreminput']))
+          <div class='output'>
+          <?php
+          $generator = new Badcow\LoremIpsum\Generator();
+          $paragraphs = $generator->getParagraphs($_POST['loreminput']);
+          echo '<p>' . implode('</p><p>', $paragraphs) . '</p>';
+          ?>
+        </div>
+      @endif
+
 @stop
 
 
