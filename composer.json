@@ -11,7 +11,8 @@
         "badcow/lorem-ipsum": "^1.1",
         "fzaninotto/Faker": "^1.5",
         "hasbridge/php-color": "dev-master",
-        "ideil/binary-to-text-php": "^2.0"
+        "ideil/binary-to-text-php": "^2.0",
+        "intervention/validation": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

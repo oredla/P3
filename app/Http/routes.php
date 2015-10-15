@@ -11,18 +11,44 @@
 |
 */
 
-
+#######################################
 # Explicit routes for all GET functions
+# home directory
 Route::get('/', 'P3Controller@getIndex');
+
+# lorem Ipsum
 Route::get('/lorem-ipsum', 'P3Controller@getLoremGenerator');
+
+# Random User Generator
 Route::get('/user-generator', 'P3Controller@getUserGenerator');
-Route::get('/octal-decoder', 'P3Controller@getOctalDecoder');
-Route::get('/color-picker', 'P3Controller@getColorPicker');
+
+# Permission Calculator: Octal Encoder, Octal Decoder
+Route::get('/permissions-calculator', 'P3Controller@getOctalEncoder');
+Route::get('/permissions-calculator/decoder', 'P3Controller@getOctalDecoder');
+
+# Color Picker: Convert RGB to HEX, Color Palette Picker, HEX to RGB
+Route::get('/color-picker', 'P3Controller@getColorPickerValue');
+Route::get('/color-picker/picker', 'P3Controller@getColorPickerPick');
+Route::get('/color-picker/hex', 'P3Controller@getColorPickerHEX');
+
+# xkcd generator integrated from P2
 Route::get('/xkcd-generator', 'P3Controller@getXkcdGenerator');
 
+########################################
 # Explicit routes for all POST functions
+# lorem Ipsum
 Route::post('/lorem-ipsum', 'P3Controller@postLoremGenerator');
+# Random User Generator
 Route::post('/user-generator', 'P3Controller@postUserGenerator');
-Route::post('/octal-decoder', 'P3Controller@postOctalDecoder');
-Route::post('/color-picker', 'P3Controller@postColorPicker');
+
+# Permission Calculator: Octal Encoder, Octal Decoder
+Route::post('/permissions-calculator', 'P3Controller@postOctalEncoder');
+Route::post('/permissions-calculator/decoder', 'P3Controller@postOctalDecoder');
+
+# Color Picker: Convert RGB to HEX, Color Palette Picker, HEX to RGB
+Route::post('/color-picker', 'P3Controller@postColorPickerValue');
+Route::post('/color-picker/picker', 'P3Controller@postColorPickerPick');
+Route::post('/color-picker/hex', 'P3Controller@postColorPickerHEX');
+
+# xkcd generator integrated from P2
 Route::post('/xkcd-generator', 'P3Controller@postXkcdGenerator');

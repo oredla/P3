@@ -14,39 +14,38 @@ such as a page specific styesheets.
 
 @stop
 
-
-@section('content')
+@section('form')
 {{-- HTML form used to ask user for an input --}}
 {{-- the php if statements are used to set the values user entered after the form has been submitted  --}}
-  <div class='form'>
-    <form method="POST" class="form-inline">
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-      Enter a number: (1-9)
-      <input type='number' name='wordCount' class="form-control" placeholder="(1-9)" max=9 min=1 style="width: 10em" value="4" required>
-      <br>
-      <br> Add a number
-      <input type='checkbox' name='addNumber'>
-      <br>
-      <br> Add a symbol
-      <input type='checkbox' name='addSymbol'>
-      <br>
-      <br>Select a separator ( -.*^%$@! )
-      <select name="addSeparator">
-          <option value="-">-</option>
-          <option value=".">.</option>
-          <option value="*">*</option>
-          <option value="^">^</option>
-          <option value="%">%</option>
-          <option value="$">$</option>
-          <option value="@">@</option>
-          <option value="!">!</option>
-      </select>
-      <br>
-      <br>
-      <button type="submit" class="btn btn-primary">Generate</button>
-      </form>
-    </div>
-    <hr class='formHR'>
+  <form method="POST" class="form-inline" action="/xkcd-generator">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    Enter a number: (1-9)
+    <input type='number' name='wordCount' class="form-control" placeholder="(1-9)" max=9 min=1 style="width: 10em" value= {{{ $_POST['wordCount'] or 4 }}} required>
+    <br>
+    <br> <label for="addNumber">Add a number</label>
+    <input type='checkbox' name='addNumber' id='addNumber'>
+    <br>
+    <br> <label for="addSymbol">Add a symbol</label>
+    <input type='checkbox' name='addSymbol' id='addSymbol'>
+    <br>
+    <br>Select a separator ( -.*^%$@! )
+    <select name="addSeparator">
+        <option value="-">-</option>
+        <option value=".">.</option>
+        <option value="*">*</option>
+        <option value="^">^</option>
+        <option value="%">%</option>
+        <option value="$">$</option>
+        <option value="@">@</option>
+        <option value="!">!</option>
+    </select>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">Generate</button>
+  </form>
+@stop
+
+@section('content')
       @if(isset($_POST['wordCount']))
         <!-- include the algorithm php file -->
         <?php require("logic.php") ?>

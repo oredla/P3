@@ -22,6 +22,26 @@ hr{
   /*!important is used for overriding the default bootstrap setting*/
   border-width:0;
 }
+label{
+  font-weight: 100 !important;
+  /*!important is used for overriding the default bootstrap setting*/
+}
+fieldset{
+  display:inline-block;
+  padding: 2em !important;
+  border: 1px solid silver !important;
+  /*!important is used for overriding the default bootstrap setting*/
+}
+legend{
+  margin-bottom: 0px !important;
+  /*!important is used for overriding the default bootstrap setting*/
+}
+.textcenter{
+  text-align: center;
+}
+.supersize{
+  font-size: 10em;
+}
 .formHR{
   width: 50%;
   text-align: center;
@@ -32,7 +52,7 @@ hr{
 }
 .outputSeparator{
   width: 50%;
-  text-align: center;
+  text-align: left;
   background-color: #bbb;
   height:2px !important;
   /*!important is used for overriding the default bootstrap setting*/

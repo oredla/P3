@@ -4,6 +4,14 @@
 Color Picker
 @stop
 
+@section('submenu')
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="/color-picker">RGB to HEX</a></li>
+      <li role="presentation"><a href="/color-picker/picker">Color Palette Picker</a></li>
+      <li role="presentation"><a href="/color-picker/hex">HEX to RGB</a></li>
+    </ul>
+@stop
+
 {{--
 This `head` section will be yielded right before the closing </head> tag.
 Use it to add specific things that *this* View needs in the head,
@@ -13,29 +21,35 @@ such as a page specific styesheets.
     <link href="/css/colorpicker.css" type='text/css' rel='stylesheet'>
 @stop
 
+@section('form')
+<h2>RGB to HEX</h2>
+  <br>
+    <form method="POST" class="form-inline" action="/color-picker">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      Enter a number: (0-255) <br>
+      <label for='Red'>Red:</label>
+      <input type='number' id='Red' name='Red' class="form-control" placeholder="(0-255)" max=255 min=0 value= {{{ $_POST['Red'] or 164 }}}>
+       <label for='Green'>Green:</label>
+      <input type='number' id='Green' name='Green' class="form-control" placeholder="(0-255)" max=255 min=0 value= {{{ $_POST['Green'] or 16 }}}>
+       <label for='Blue'>Blue:</label>
+      <input type='number' id='Blue' name='Blue' class="form-control" placeholder="(0-255)" max=255 min=0 value= {{{ $_POST['Blue'] or 52 }}}>
+      <br><br>
+      <button type="submit" class="btn btn-primary">Convert</button>
+    </form>
+@stop
 
 @section('content')
-    <?php
-    $color = new Color(0xFF9900);
+  @if(isset($_POST['Red']))
+  <div class='output'>
+      <?php
+      $color = new Color();
 
-    echo $color;
-
-    $color1 = new Color(0xFFFFFF);
-    $color2 = new Color(0xFFFFFE);
-
-    $distance = $color1->getDistanceRgbFrom($color2);
-
-    echo " spacing : " . $distance;
-
-    ?>
-    <div style="color:<?=$color?>"> Selected Color </div>
-    <form>
-      <input type="color" value="<?=$color?>">
-    </form>
-    <form name="registrationForm">
-      <input type="range" name="ageInputName" id="ageInputId" value="24" min="1" max="100" oninput="ageOutputId.value = ageInputId.value">
-      <output name="ageOutputName" id="ageOutputId">24</output>
-    </form>
+      $converted = $color->fromRgbInt($_POST['Red'], $_POST['Green'], $_POST['Blue']);
+      ?>
+      <h2 class="textcenter" style="color:<?=$converted?>;"><?=$converted?></h2>
+        <div style="margin-left:10%;margin-bottom:3em;height:100px;width:80%;background-color:<?=$converted?>;"></div>
+  </div>
+    @endif
 @stop
 
 

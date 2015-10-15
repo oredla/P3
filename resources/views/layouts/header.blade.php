@@ -17,7 +17,7 @@
           <a href="/color-picker">Color Picker</a>
         </li>
         <li>
-          <a href="/octal-decoder">Octal Decoder</a>
+          <a href="/permissions-calculator">Permission Calculator</a>
         </li>
         <li>
           <a href="/xkcd-generator">xkcd Password Generator</a>
@@ -26,3 +26,5 @@
   </div>
 </nav>
 @show
+
+@yield('submenu')

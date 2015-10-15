@@ -147,6 +147,7 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        Intervention\Validation\ValidationServiceProvider::class,
     ],
 
     /*

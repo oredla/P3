@@ -1,0 +1,17 @@
+.form{
+  border-color: #DDD;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2em;
+}
+.octalcheckbox{
+  padding-bottom: 0.4em;
+  font-family: 'Roboto', sans-serif;
+}
+input[type="number"] {
+  font-size: 2em;
+  width: 1em;
+  height: 2em;
+  text-align: center;
+  margin-top: 0.5em;
+}

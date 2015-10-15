@@ -2,3 +2,36 @@ input[type="color"] {
   width: 300px;
   height: 200px;
 }
+input[type="text"] {
+  font-size: 3em;
+  width: 50%;
+  height: 2em;
+  text-align: center;
+}
+input[type="number"] {
+  font-size: 2em;
+  width: 1em;
+  height: 2em;
+  text-align: center;
+}
+label{
+  font-size:2em;
+  vertical-align: middle;
+}
+label[for="Red"]{
+  color: red;
+}
+label[for="Green"]{
+  padding-left: 2em;
+  color: green;
+}
+label[for="Blue"]{
+  padding-left: 2em;
+  color: blue;
+}
+.form{
+  border-color: #DDD;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2em;
+}

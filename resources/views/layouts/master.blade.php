@@ -17,8 +17,27 @@
       @include('layouts.header')
     </header>
 
+    <section id="form">
+        <div class='form'>
+          {{-- Main page FORM will be yielded here --}}
+          @yield('form')
+        </div>
+    </section>
+      @section('divider')
+        <hr class='formHR'>
+      @show
     <section>
-        {{-- Main page content will be yielded here --}}
+        @if(count($errors) > 0)
+            <ul class="alert alert-danger" role="alert">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+    </section>
+
+    <section id="content">
+        {{-- Main page RESULT will be yielded here --}}
         @yield('content')
     </section>
 
@@ -30,7 +49,7 @@
 </div>
 
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,100' rel='stylesheet' type='text/css'>
-    <link href="css/main.css" type='text/css' rel='stylesheet'>
+    <link href="/css/main.css" type='text/css' rel='stylesheet'>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 

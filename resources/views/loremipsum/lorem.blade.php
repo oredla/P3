@@ -14,17 +14,16 @@ such as a page specific styesheets.
 
 @stop
 
+@section('form')
+  <form method="POST" class="form-inline" action="/lorem-ipsum">
+    How many paragraphs do you want? (Max: 99)
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input type="number" class="form-control" name="loreminput" min="1" max="99" value= {{{ $_POST['loreminput'] or 5 }}}>
+    <button type="submit" class="btn btn-primary">Generate</button>
+  </form>
+@stop
 
 @section('content')
-  <div class='form'>
-    <form method="POST" class="form-inline">
-        How many paragraphs do you want? (Max: 99)
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <input type="number" class="form-control" name="loreminput" min="1" max="99" value="5">
-        <button type="submit" class="btn btn-primary">Generate</button>
-      </form>
-    </div>
-    <hr class="formHR">
       @if(isset($_POST['loreminput']))
           <div class='output'>
           <?php
@@ -34,7 +33,6 @@ such as a page specific styesheets.
           ?>
         </div>
       @endif
-
 @stop
 
 

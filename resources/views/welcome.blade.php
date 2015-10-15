@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 {{--
-empty 'title' section so it will NOT display the menu bar on the front page 
+empty 'title' section so it will NOT display the menu bar on the front page
 --}}
 @section('title')
 
@@ -30,6 +30,9 @@ such as a page specific styesheets.
 
 @stop
 
+@section('divider')
+
+@stop
 
 @section('content')
     <div class="jumbotron">
@@ -43,16 +46,20 @@ such as a page specific styesheets.
       <p><a class="btn btn-primary btn-lg" href="/user-generator" role="button">Random User Generator</a></p>
     </div>
     <div class="jumbotron">
+      <h1>Permissions Calculator</h1>
+      <p>more information at: <a href="http://permissions-calculator.org/info/">http://permissions-calculator.org/info/</a></p>
+      <p><a class="btn btn-primary btn-lg" href="/permissions-calculator" role="button">Permissions Calculator</a></p>
+      </div>
+    <div class="jumbotron">
       <h1>Color Picker</h1>
       <p></p>
       <p><a class="btn btn-primary btn-lg" href="/color-picker" role="button">Color Picker</a></p>
     </div>
     <div class="jumbotron">
-      <h1>Octal Decoder</h1>
+      <h1>xkcd Password Generator</h1>
       <p> </p>
-      <p><a class="btn btn-primary btn-lg" href="/octal-decoder" role="button">Octal Decoder</a></p>
+      <p><a class="btn btn-primary btn-lg" href="/xkcd-generator" role="button">xkcd Password Generator</a></p>
     </div>
-
 @stop
 
 
