@@ -4,7 +4,6 @@
     xkcd Password Generator
 @stop
 
-
 {{--
 This `head` section will be yielded right before the closing </head> tag.
 Use it to add specific things that *this* View needs in the head,
@@ -23,21 +22,21 @@ such as a page specific styesheets.
     <input type='number' name='wordCount' class="form-control" placeholder="(1-9)" max=9 min=1 style="width: 10em" value= {{{ $_POST['wordCount'] or 4 }}} required>
     <br>
     <br> <label for="addNumber">Add a number</label>
-    <input type='checkbox' name='addNumber' id='addNumber'>
+    <input type='checkbox' name='addNumber' id='addNumber' @if(isset($_POST['addNumber'])) checked @endif>
     <br>
     <br> <label for="addSymbol">Add a symbol</label>
-    <input type='checkbox' name='addSymbol' id='addSymbol'>
+    <input type='checkbox' name='addSymbol' id='addSymbol' @if(isset($_POST['addSymbol'])) checked @endif>
     <br>
     <br>Select a separator ( -.*^%$@! )
     <select name="addSeparator">
-        <option value="-">-</option>
-        <option value=".">.</option>
-        <option value="*">*</option>
-        <option value="^">^</option>
-        <option value="%">%</option>
-        <option value="$">$</option>
-        <option value="@">@</option>
-        <option value="!">!</option>
+      <option value="-">-</option>
+      <option value=".">.</option>
+      <option value="*">*</option>
+      <option value="^">^</option>
+      <option value="%">%</option>
+      <option value="$">$</option>
+      <option value="@">@</option>
+      <option value="!">!</option>
     </select>
     <br>
     <br>
@@ -46,10 +45,10 @@ such as a page specific styesheets.
 @stop
 
 @section('content')
-      @if(isset($_POST['wordCount']))
+      @if(isset($_POST['_token']))
         <!-- include the algorithm php file -->
         <?php require("logic.php") ?>
-
+        {{-- the result output in the content  --}}
         <div class='output'>
             <div id="PWGenBox" style="text-align:center;font-size:2em;word-wrap: break-word;">
                 <?php echo $password ?>
