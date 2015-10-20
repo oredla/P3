@@ -43,7 +43,7 @@ such as a page specific styesheets.
   <div class='output'>
       <?php
       $color = new Color();
-
+      // fromRgbInt() returns the colors in HEX value
       $converted = $color->fromRgbInt($_POST['Red'], $_POST['Green'], $_POST['Blue']);
       ?>
       <h2 class="textcenter" style="color:<?=$converted?>;"><?=$converted?></h2>

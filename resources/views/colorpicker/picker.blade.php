@@ -34,15 +34,13 @@ such as a page specific styesheets.
 @stop
 
 @section('content')
-  @if(isset($_POST['hexcolor']))
+  @if(isset($_POST['_token']))
   <div class='output'>
       <?php
-        // echo $_POST['picked'];
         $color = new Color();
         $color->fromHex($_POST['hexcolor']);
-        // echo $color;
+        // toRgbInt() returns the colors separated in RED, GREEN, BLUE in an array.
         $converted = $color->toRgbInt();
-        // print_r ($converted);
         ?>
         <h2 class="textcenter" style="color<?=$color?>;"><?=$color?></h2>
         <br>

@@ -24,11 +24,13 @@ such as a page specific styesheets.
 @stop
 
 @section('content')
-      @if(isset($_POST['loreminput']))
+      @if(isset($_POST['_token']))
           <div class='output'>
           <?php
           $generator = new Badcow\LoremIpsum\Generator();
           $paragraphs = $generator->getParagraphs($_POST['loreminput']);
+          //this way of echo + implode will ensure the beginning of the paragraph will have a proper <p> tag
+          //the example on http://p3.dwa15.com/lorem-ipsum does not generate the first <p> tag
           echo '<p>' . implode('</p><p>', $paragraphs) . '</p>';
           ?>
         </div>

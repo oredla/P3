@@ -36,17 +36,16 @@ such as a page specific styesheets.
 
 @section('content')
   @if(isset($_POST['_token']))
-  {{-- LOGIC CALCULATION --}}
-
+  {{-- LOGIC CALCULATION begins --}}
   <?php
       $octal = $_POST['notation'];
+      // this array stores all the names of the permission
       $permissionsNAMES = array (
         0  => array('setuid', 'setgid', 'stickybit'),
         1  => array('uRead', 'uWrite', 'uExecute'),
         2  => array('gRead', 'gWrite', 'gExecute'),
         3  => array('oRead', 'oWrite', 'oExecute')
       );
-      //$permissionbits
       for($i = 0; $i < 4; $i++){
         $digit = substr($octal, $i, 1);
         switch ($digit) {
@@ -87,7 +86,7 @@ such as a page specific styesheets.
         }
       }
    ?>
-
+   {{-- Logical Calculation ends --}}
 
   {{-- OUTPUT --}}
   <div class='output textcenter'>

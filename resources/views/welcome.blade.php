@@ -55,7 +55,7 @@ empty 'divider' section so it will NOT display the divider bar on the front page
       </div>
     <div class="jumbotron">
       <h1>Color Picker</h1>
-      <p>This is a tool to convert colors: from HEX to RGB, from RGB to HEX, or pick a color from the color palette and convert it to HEX. idea inspired by: <a href="http://www.javascripter.net/faq/rgbtohex.htm">http://www.javascripter.net/faq/rgbtohex.htm</a></p>
+      <p>This is a tool to convert colors: from HEX to RGB, from RGB to HEX, or pick a color from the color palette and convert it to RGB. idea inspired by: <a href="http://www.javascripter.net/faq/rgbtohex.htm">http://www.javascripter.net/faq/rgbtohex.htm</a></p>
       <p><a class="btn btn-primary btn-lg" href="/color-picker" role="button">Color Picker</a></p>
     </div>
     <div class="jumbotron">

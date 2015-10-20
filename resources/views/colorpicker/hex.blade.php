@@ -37,12 +37,10 @@ such as a page specific styesheets.
   @if(isset($_POST['hexcolor']))
   <div class='output'>
       <?php
-        // echo $_POST['picked'];
         $color = new Color();
         $color->fromHex($_POST['hexcolor']);
-        // echo $color;
+        // toRgbInt() returns the colors separated in RED, GREEN, BLUE in an array.
         $converted = $color->toRgbInt();
-        // print_r ($converted);
         ?>
         <br>
         <div style="margin-left:10%;margin-bottom:3em;height:100px;width:80%;background-color:<?=$color?>;"></div>

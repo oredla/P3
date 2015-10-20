@@ -46,7 +46,7 @@ taken from P1, I had some minor modification (i.e. switching from PureCSS to boo
     - `@parameter: integer 0-255`: number input for Red, Green, and Blue.  
   * from **HEX to RGB**
     - `@parameter: hex color`: 6 digit hexadecimal number will be converted to values for Red, Green, and Blue.
-  * or pick a color from the **color palette** and convert it to HEX.
+  * or pick a color from the **color palette** and convert it to RGB.
     - `@parameter: HTML type=color`: input using OS system's default color palette.
 
 
@@ -62,7 +62,6 @@ taken from P1, I had some minor modification (i.e. switching from PureCSS to boo
 * `Color Picker`:
   * uses [hasbridge/php-color](https://packagist.org/packages/hasbridge/php-color) for color numbers conversion
   * Color Picker has a hexcolor validation, `Intervention Validation Class`, uses [intervention/validation](https://github.com/Intervention/validation)
-* `Permissions Calculator`: uses [ideil/binary-to-text-php](https://packagist.org/packages/ideil/binary-to-text-php)
 
 ## Outside code
 * **Bootstrap**: [http://getbootstrap.com/](http://getbootstrap.com/) is used responsive page layout and handles all CSS for the forms.

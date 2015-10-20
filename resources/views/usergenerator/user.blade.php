@@ -45,7 +45,7 @@ such as a page specific styesheets.
 @stop
 
 @section('content')
-      @if(isset($_POST['userinput']))
+      @if(isset($_POST['_token']))
         <div class='output'>
           <?php
           $faker = Faker\Factory::create();
