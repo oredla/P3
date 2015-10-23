@@ -1,0 +1,14 @@
+#PWGenBox{
+  text-align:center;
+  font-size:2em;
+  word-wrap: break-word;
+}
+#howSecureBox{
+  text-align: center;
+  font-size: 1.3em;
+  word-wrap: break-word;
+  background-color: #666;
+  color: white;
+  width: 70%;
+  margin: auto;
+}

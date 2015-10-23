@@ -4,6 +4,10 @@
     xkcd Password Generator
 @stop
 
+@section('head')
+    <link href="/css/xkcd.css" type='text/css' rel='stylesheet'>
+@stop
+
 @section('form')
 {{-- HTML form used to ask user for an input --}}
 {{-- the php if statements are used to set the values user entered after the form has been submitted  --}}
@@ -37,17 +41,18 @@
 
 @section('content')
       @if(isset($_POST['_token']))
-        <!-- include the algorithm php file -->
-        <?php require("logic.php") ?>
         {{-- the result output in the content  --}}
         <div class='output'>
-            <div id="PWGenBox" style="text-align:center;font-size:2em;word-wrap: break-word;">
-                <?php echo $password ?>
+            <div id="PWGenBox">
+                <?= $output['password'] ?>
             </div>
-            <div id="howSecureBox" style="text-align: center;font-size: 1.3em;word-wrap: break-word;background-color: #666;color: white;width: 70%;margin: auto;">
-                <?php echo $returnText ?>
+            <div id="howSecureBox">
+                <?= $output['howSecure']?>
                     <div class="progress">
-                        <div class="progress-bar <?php echo $howSecureColor ?> progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $howSecurePrecentage ?>%">
+                        <div class="progress-bar <?=$output['howSecureColor']?>
+                          progress-bar-striped" role="progressbar"
+                          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                          style="width: <?=$output['howSecurePrecentage']?>%">
                         </div>
                     </div>
             </div>

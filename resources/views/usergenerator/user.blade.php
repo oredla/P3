@@ -36,49 +36,47 @@
 @section('content')
       @if(isset($_POST['_token']))
         <div class='output'>
-          <?php
-          // generate data by accessing properties
-          for ($i=0; $i < $_POST['userinput']; $i++) {
-            ?>
+          {{-- generate data by accessing $fakerArray --}}
+          @foreach($fakerArray as $key => $value)
+            @if($key != 'init') {{-- this will exclude the initialization value --}}
             <ul
               {{-- this if statement will change the color of each individual
               person's profile when user checked off COLOR --}}
-              @if(isset($_POST['Color']))
-                <?= "style='color:" . $faker->hexcolor . "'" ?>
+              @if(isset($fakerArray[$key]['Color']))
+                <?="style='color:" . $fakerArray[$key]['Color'] . "'"?>
               @endif
               >
-              <li>
-                {{-- 1st item of the list is NAME, given a H4 header --}}
-                <h4><?php echo $faker->name;?> </h4>
+              <li>{{-- 1st item of the list is NAME, given a H2 header --}}
+                <h2>{{ $fakerArray[$key]['Name'] }}</h2>
               </li>
-
               {{-- if statement to test for BIRTHDATE --}}
-              @if(isset($_POST['Birthdate']))
-                <li>Date of Birth: <?= $faker->dateTimeThisCentury->format('Y-m-d') ?></li>
-              @endif
-              {{-- if statement to test for PHONE --}}
-              @if(isset($_POST['Phone']))
-                <li>Phone#: <?= $faker->phoneNumber ?></li>
-              @endif
-              {{-- if statement to test for ADDRESS --}}
-              @if(isset($_POST['Address']))
-                <li>Address: <?= $faker->address ?></li>
-              @endif
-              {{-- if statement to test for EMAIL --}}
-              @if(isset($_POST['Email']))
-                <li>Email: <?= $faker->email ?></li>
-              @endif
-              {{-- if statement to test for PROFILE --}}
-              @if(isset($_POST['Profile']))
-                <li>Profile: <?= $faker->text ?></li>
-              @endif
-              {{-- if statement to test for PASSWORD --}}
-              @if(isset($_POST['Password']))
-                <li>Password: <?= $faker->password ?></li>
-              @endif
+               @if(isset($fakerArray[$key]['Birthdate']))
+                 <li>Date of Birth: {{ $fakerArray[$key]['Birthdate'] }}</li>
+               @endif
+               {{-- if statement to test for PHONE --}}
+               @if(isset($fakerArray[$key]['Phone']))
+                 <li>Phone#: {{ $fakerArray[$key]['Phone'] }}</li>
+               @endif
+               {{-- if statement to test for ADDRESS --}}
+               @if(isset($fakerArray[$key]['Address']))
+                 <li>Address: {{ $fakerArray[$key]['Address'] }}</li>
+               @endif
+               {{-- if statement to test for EMAIL --}}
+               @if(isset($fakerArray[$key]['Email']))
+                 <li>Email: {{ $fakerArray[$key]['Email'] }}</li>
+               @endif
+               {{-- if statement to test for PROFILE --}}
+               @if(isset($fakerArray[$key]['Profile']))
+                 <li>Profile: {{ $fakerArray[$key]['Profile'] }}</li>
+               @endif
+               {{-- if statement to test for PASSWORD --}}
+               @if(isset($fakerArray[$key]['Password']))
+                 <li>Password: {{ $fakerArray[$key]['Password'] }}</li>
+               @endif
             </ul>
+            @endif
+          @endforeach
             <hr class='outputSeparator'>
-          <?php } ?>
         </div>
       @endif
 
