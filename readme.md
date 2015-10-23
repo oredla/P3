@@ -4,7 +4,7 @@
 <http://p3.orangeedward.xyz>
 
 ## Description
-The third assignment, P3, devloped with Laravel to provide a set of web developer's tools.
+The third assignment, P3, developed with Laravel to provide a set of web developer's tools.
 
 ## Demo
 

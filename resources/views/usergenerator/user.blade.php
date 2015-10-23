@@ -1,18 +1,7 @@
 @extends('layouts.master')
 
-
 @section('title')
     Random User Generator
-@stop
-
-
-{{--
-This `head` section will be yielded right before the closing </head> tag.
-Use it to add specific things that *this* View needs in the head,
-such as a page specific styesheets.
---}}
-@section('head')
-
 @stop
 
 @section('form')
@@ -48,7 +37,6 @@ such as a page specific styesheets.
       @if(isset($_POST['_token']))
         <div class='output'>
           <?php
-          $faker = Faker\Factory::create();
           // generate data by accessing properties
           for ($i=0; $i < $_POST['userinput']; $i++) {
             ?>
@@ -93,14 +81,5 @@ such as a page specific styesheets.
           <?php } ?>
         </div>
       @endif
-
-@stop
-
-{{--
-This `body` section will be yielded right before the closing </body> tag.
-Use it to add specific things that *this* View needs at the end of the body,
-such as a page specific JavaScript files.
---}}
-@section('body')
 
 @stop

@@ -5,20 +5,12 @@ Permission Calculator (Decoder)
 @stop
 
 @section('submenu')
-    <ul class="nav nav-tabs">
-      <li role="presentation"><a href="/permissions-calculator">Octal Encoder</a></li>
-      <li role="presentation" class="active"><a href="/permissions-calculator/decoder">Octal Decoder</a></li>
-    </ul>
+    @include('permissioncalc.submenu')
 @stop
 
-{{--
-This `head` section will be yielded right before the closing </head> tag.
-Use it to add specific things that *this* View needs in the head,
-such as a page specific styesheets.
---}}
+{{-- This `head` section will be yielded right before the closing </head> tag. --}}
 @section('head')
-    <link href="/css/octal.css" type='text/css' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    @include('permissioncalc.permissionhead')
 @stop
 
 @section('form')
@@ -36,59 +28,7 @@ such as a page specific styesheets.
 
 @section('content')
   @if(isset($_POST['_token']))
-  {{-- LOGIC CALCULATION begins --}}
-  <?php
-      $octal = $_POST['notation'];
-      // this array stores all the names of the permission
-      $permissionsNAMES = array (
-        0  => array('setuid', 'setgid', 'stickybit'),
-        1  => array('uRead', 'uWrite', 'uExecute'),
-        2  => array('gRead', 'gWrite', 'gExecute'),
-        3  => array('oRead', 'oWrite', 'oExecute')
-      );
-      for($i = 0; $i < 4; $i++){
-        $digit = substr($octal, $i, 1);
-        switch ($digit) {
-            case 7:
-                // set flag bit for ALL
-                $output[$permissionsNAMES[$i][0]] = 'y';
-                $output[$permissionsNAMES[$i][1]] = 'y';
-                $output[$permissionsNAMES[$i][2]] = 'y';
-                break;
-            case 6:
-                // set flag bit for READ & WRITE
-                $output[$permissionsNAMES[$i][0]] = 'y';
-                $output[$permissionsNAMES[$i][1]] = 'y';
-                break;
-            case 5:
-                // set flag bit for READ & EXECUTE
-                $output[$permissionsNAMES[$i][0]] = 'y';
-                $output[$permissionsNAMES[$i][2]] = 'y';
-                break;
-            case 4:
-                // set flag bit for READ
-                $output[$permissionsNAMES[$i][0]] = 'y';
-                break;
-            case 3:
-                // set flag bit for WRITE & EXECUTE
-                $output[$permissionsNAMES[$i][1]] = 'y';
-                $output[$permissionsNAMES[$i][2]] = 'y';
-                break;
-            case 2:
-                // set flag bit for WRITE
-                $output[$permissionsNAMES[$i][1]] = 'y';
-                break;
-            case 1:
-                // set flag bit for EXECUTE
-                $output[$permissionsNAMES[$i][2]] = 'y';
-                break;
-
-        }
-      }
-   ?>
-   {{-- Logical Calculation ends --}}
-
-  {{-- OUTPUT --}}
+  {{-- ALERTS --}}
   <div class='output textcenter'>
     @if(isset($output['setuid']) and !isset($output['uExecute']))
     <div class="alert alert-danger" role="alert">User must have execute rights for setuid to work</div>
@@ -99,6 +39,7 @@ such as a page specific styesheets.
     @if(isset($output['stickybit']) and !isset($output['oExecute']))
     <div class="alert alert-danger" role="alert">Other must have execute rights for sticky bit to work</div>
     @endif
+    {{-- OUTPUT --}}
       <fieldset id="Special">
       <legend>Special</legend>
         <div class='octalcheckbox'><input disabled type="checkbox" name="setuid" value="4000" id="setuid"
@@ -137,14 +78,4 @@ such as a page specific styesheets.
       </fieldset>
   </div>
     @endif
-@stop
-
-
-{{--
-This `body` section will be yielded right before the closing </body> tag.
-Use it to add specific things that *this* View needs at the end of the body,
-such as a page specific JavaScript files.
---}}
-@section('body')
-
 @stop

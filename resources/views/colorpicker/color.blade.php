@@ -1,22 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-Color Picker
+Color Picker - RGB to HEX
 @stop
 
 @section('submenu')
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="/color-picker">RGB to HEX</a></li>
-      <li role="presentation"><a href="/color-picker/picker">Color Palette Picker</a></li>
-      <li role="presentation"><a href="/color-picker/hex">HEX to RGB</a></li>
-    </ul>
+    @include('colorpicker.submenu')
 @stop
 
-{{--
-This `head` section will be yielded right before the closing </head> tag.
-Use it to add specific things that *this* View needs in the head,
-such as a page specific styesheets.
---}}
+{{-- This `head` section will be yielded right before the closing </head> tag. --}}
 @section('head')
     <link href="/css/colorpicker.css" type='text/css' rel='stylesheet'>
 @stop
@@ -39,25 +31,10 @@ such as a page specific styesheets.
 @stop
 
 @section('content')
-  @if(isset($_POST['Red']))
+  @if(isset($_POST['_token']))
   <div class='output'>
-      <?php
-      $color = new Color();
-      // fromRgbInt() returns the colors in HEX value
-      $converted = $color->fromRgbInt($_POST['Red'], $_POST['Green'], $_POST['Blue']);
-      ?>
-      <h2 class="textcenter" style="color:<?=$converted?>;"><?=$converted?></h2>
-        <div style="margin-left:10%;margin-bottom:3em;height:100px;width:80%;background-color:<?=$converted?>;"></div>
+      <h2 class="textcenter" style="color:{{ $converted }};"> {{ $converted }}</h2>
+        <div style="margin-left:10%;margin-bottom:3em;height:100px;width:80%;background-color:{{ $converted }};"></div>
   </div>
     @endif
-@stop
-
-
-{{--
-This `body` section will be yielded right before the closing </body> tag.
-Use it to add specific things that *this* View needs at the end of the body,
-such as a page specific JavaScript files.
---}}
-@section('body')
-
 @stop

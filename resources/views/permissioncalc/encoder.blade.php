@@ -5,20 +5,12 @@ Permission Calculator (Encoder)
 @stop
 
 @section('submenu')
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="/permissions-calculator">Octal Encoder</a></li>
-      <li role="presentation"><a href="/permissions-calculator/decoder">Octal Decoder</a></li>
-    </ul>
+    @include('permissioncalc.submenu')
 @stop
 
-{{--
-This `head` section will be yielded right before the closing </head> tag.
-Use it to add specific things that *this* View needs in the head,
-such as a page specific styesheets.
---}}
+{{-- This `head` section will be yielded right before the closing </head> tag. --}}
 @section('head')
-    <link href="/css/octal.css" type='text/css' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    @include('permissioncalc.permissionhead')
 @stop
 
 @section('form')
@@ -75,15 +67,7 @@ such as a page specific styesheets.
   @if(isset($_POST['_token']))
   <div class='output'>
       <h4 class="textcenter">Absolute Notation (octal)</h4>
-      {{-- initiate the value for $octal as 0  --}}
-      <?php $octal = 0; ?>
-      {{-- this foreach loop will add the value of all of the checked boxes to generate the octal number --}}
-      @foreach($_POST as $key => $value)
-          <?php
-            $octal = $octal + $value;
-            ?>
-      @endforeach
-      {{-- this will output an error message for setting the 1st bit in the octal --}}
+      {{-- ALERTS: this will output an error message for setting the 1st bit in the octal --}}
       @if(isset($_POST['setuid']) and !isset($_POST['uExecute']))
       <div class="alert alert-danger" role="alert">User must have execute rights for setuid to work</div>
       @endif
@@ -93,18 +77,8 @@ such as a page specific styesheets.
       @if(isset($_POST['stickybit']) and !isset($_POST['oExecute']))
       <div class="alert alert-danger" role="alert">Other must have execute rights for sticky bit to work</div>
       @endif
-      {{-- this will output the $octal on screen as result --}}
+      {{-- OUTPUT: this will output the $octal on screen as result --}}
       <h2 class="textcenter supersize "><?php printf("%04d",$octal)?></h2>
   </div>
     @endif
-@stop
-
-
-{{--
-This `body` section will be yielded right before the closing </body> tag.
-Use it to add specific things that *this* View needs at the end of the body,
-such as a page specific JavaScript files.
---}}
-@section('body')
-
 @stop

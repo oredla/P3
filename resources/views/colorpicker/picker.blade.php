@@ -1,15 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-Color Picker
+Color Picker - Palette
 @stop
 
 @section('submenu')
-    <ul class="nav nav-tabs">
-      <li role="presentation"><a href="/color-picker">RGB to HEX</a></li>
-      <li role="presentation" class="active"><a href="/color-picker/picker">Color Palette Picker</a></li>
-      <li role="presentation"><a href="/color-picker/hex">HEX to RGB</a></li>
-    </ul>
+    @include('colorpicker.submenu')
 @stop
 
 
@@ -23,7 +19,7 @@ such as a page specific styesheets.
 @stop
 
 @section('form')
-<h2>RGB to Hex via Color Palette Picker</h2>
+<h2>HEX to RGB via Color Palette Picker</h2>
   <br>
     <form method="POST" class="form-inline" action="/color-picker/picker">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -36,20 +32,14 @@ such as a page specific styesheets.
 @section('content')
   @if(isset($_POST['_token']))
   <div class='output'>
-      <?php
-        $color = new Color();
-        $color->fromHex($_POST['hexcolor']);
-        // toRgbInt() returns the colors separated in RED, GREEN, BLUE in an array.
-        $converted = $color->toRgbInt();
-        ?>
-        <h2 class="textcenter" style="color<?=$color?>;"><?=$color?></h2>
+        <h2 class="textcenter" style="color{{ $colorlist['color'] }};">{{ $colorlist['color'] }}</h2>
         <br>
         <h2 class="textcenter">
-          <span style="color:red;">Red: <?=$converted['red']?></span>
+          <span style="color:red;">Red: {{ $colorlist['converted']['red'] }}</span>
             |
-          <span style="color:green;">Green: <?=$converted['green']?></span>
+          <span style="color:green;">Green: {{ $colorlist['converted']['green'] }}</span>
             |
-          <span style="color:blue;">Blue: <?=$converted['blue']?> </span>
+          <span style="color:blue;">Blue: {{ $colorlist['converted']['blue'] }} </span>
         </h2>
   </div>
     @endif
