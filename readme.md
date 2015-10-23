@@ -32,12 +32,15 @@ A generator that will help you to create dummy users with dummy information to p
 3. **Permissions Calculator**:
 A calculator to generate the octal notation from permissions input (encoding), as well as decoding an octal notation.
   * **Encoder**
-    - `@parameter: checkboxes': input from the permission checkbox will generate the Octal Notation.
+    - `@parameter: checkboxes`: input from the permission checkbox will generate the Octal Notation.
   * **Decoder**
     - `@parameter: octal notation`: the inputted octal notation will be decoder to a permission table for user to understand easily.
 
 4. **xkcd Password Generator**:
-taken from P1, I had some minor modification (i.e. switching from PureCSS to bootstrap) to retro fi, and cleaned up some of the coding. form action was changed from GET to POST.
+taken from P1, I had integrated the logic.php into XkcdController.php and separated the whole logic file into multiple functions. There are also other minor modification (i.e. switching from PureCSS to bootstrap) to retro fit, and cleaned up some of the coding. form action was changed from GET to POST.
+  - `@parameter: number of words(integer)`: enter an **integer from 1 to 9** to generate the password from random words
+  - `@parameter: checks for options`: check off options available: addNumber and addSymbol.
+  - `@parameter: addSeparator (dropdown list)`: a dropdown list for different separator between the random words.
 
 5. **Color Picker**: idea inspired by: [http://www.javascripter.net/faq/rgbtohex.htm](http://www.javascripter.net/faq/rgbtohex.htm)
 
