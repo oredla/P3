@@ -28,7 +28,7 @@ such as a page specific styesheets.
    <br>
     <form method="POST" class="form-inline" action="/permissions-calculator/decoder">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-      <input type='number' maxlength=4 name='notation' class="form-control" placeholder="please enter a 4 digit notation" value= {{{ $_POST['notation'] or "0000" }}}>
+      <input type='number' name='notation' class="form-control" placeholder="please enter a 4 digit notation" value= {{{ $_POST['notation'] or "0000" }}}>
       <br><br>
       <button type="submit" class="btn btn-primary">Convert</button>
     </form>
