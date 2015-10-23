@@ -11,6 +11,14 @@
     {{-- Yield any page specific CSS files or anything else you might want in the html head --}}
     @yield('head')
 
+    {{-- loading CSS for FONT from Google Fonts API, for structure and design from BOOTSTRAP CDN, and main.css --}}
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,100' rel='stylesheet' type='text/css'>
+    {{-- main.css includes general items that needs styling,
+      with some !important added to override the default setting from Bootstrap --}}
+    <link href="/css/main.css" type='text/css' rel='stylesheet'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
 </head>
 <body>
   <div class='container'>
@@ -53,13 +61,6 @@
       </div>
     </footer>
 </div>
-    {{-- loading CSS for FONT from Google Fonts API, for structure and design from BOOTSTRAP CDN, and main.css --}}
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,100' rel='stylesheet' type='text/css'>
-    {{-- main.css includes general items that needs styling, 
-      with some !important added to override the default setting from Bootstrap --}}
-    <link href="/css/main.css" type='text/css' rel='stylesheet'>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     {{-- Yield any page specific JS files or anything else you might want at the end of the body --}}
     @yield('body')
