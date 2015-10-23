@@ -89,5 +89,6 @@ li{
 }
 .breadcrumb{
   padding: 16px 25px !important;
+  margin-bottom: 0 !important;
   /*!important is used for overriding the default bootstrap padding size*/
 }
