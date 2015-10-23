@@ -3,6 +3,5 @@
   <ol class="breadcrumb">
     <li><a href="/">home</a></li>
     <li class="active">@yield('title')</li>
-    <span style="float:right;"><a href="http://p1.orangeedward.xyz">Kar Ho Lau</a>, CSCI E-15, P3, &copy; {{ date('Y') }}</span>
-  </ol>
+    </ol>
 @show
