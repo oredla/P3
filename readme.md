@@ -7,7 +7,7 @@
 The third assignment, P3, developed with Laravel to provide a set of web developer's tools.
 
 ## Demo
-
+[http://screencast.com/t/bEALkFLE](http://screencast.com/t/bEALkFLE)
 
 ## Details for teaching team
 No login required.
@@ -51,6 +51,7 @@ taken from P1, I had integrated the logic.php into XkcdController.php and separa
     - `@parameter: hex color`: 6 digit hexadecimal number will be converted to values for Red, Green, and Blue.
   * or pick a color from the **color palette** and convert it to RGB.
     - `@parameter: HTML type=color`: input using OS system's default color palette.
+  * a special validation package was installed, [intervention/validation](https://github.com/Intervention/validation), to validate the user input for a hexadecimal number.
 
 
 
